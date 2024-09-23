@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "4b1ef8ac-cab4-4599-ae6b-96f248645155",
+		"name": "Blog Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24360500"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Dipankar Bhoumik",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "bhoumik.dipu@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc@1234",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "abc@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "bhoumik.dipu@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjY5MDUzNjMsImV4cCI6MTczNDY4MTM2MywidHlwZSI6IlJFRlJFU0gifQ.bKoitAaYc0806-ASKqIMAawD1Smc-f3HUxYGxA5n03I",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjY5MDU5NzEsImV4cCI6MTczNDY4MTk3MSwidHlwZSI6IlJFRlJFU0gifQ.gp8UvBmpzBS0VWbtjqpRKzhqGDRAizBa7rZhTrCTuNU",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/user/refresh-auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user",
+								"refresh-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog",
+			"item": [
+				{
+					"name": "Create Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjcwMDkxODgsImV4cCI6MTcyNzA5NTU4OCwidHlwZSI6IkFDQ0VTUyJ9.Plxq0VQcPEoVVdFDrxZMYGLVqQa41_UPaJG5T6Clwo4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "How to Improve Your Coding Skills",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Programming is a skill that requires practice and dedication. Whether you are a beginner or an experienced developer, there is always room for improvement. Here are five tips to help you become a better programmer: practice consistently, learn new technologies, collaborate with others, contribute to open-source projects, and read code written by experts.</p><p>Start by identifying your weak areas and focus on those. Keep challenging yourself with new problems, and don't shy away from complex projects.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjcwMDkxODgsImV4cCI6MTcyNzA5NTU4OCwidHlwZSI6IkFDQ0VTUyJ9.Plxq0VQcPEoVVdFDrxZMYGLVqQa41_UPaJG5T6Clwo4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "This is a sample Blog",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hey i am Dipu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/66f054f798311d937025ac80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"66f054f798311d937025ac80"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjcwMDkxODgsImV4cCI6MTcyNzA5NTU4OCwidHlwZSI6IkFDQ0VTUyJ9.Plxq0VQcPEoVVdFDrxZMYGLVqQa41_UPaJG5T6Clwo4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/66f05a62ea4628944a704862",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"66f05a62ea4628944a704862"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjY5MDcyOTEsImV4cCI6MTcyNjk5MzY5MSwidHlwZSI6IkFDQ0VTUyJ9.uvZCt6-SgbVz0yVKyDvORNNMz5XH353vQB0wqyuMms8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs?page=1&limit=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View All Own Blogs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjcwMDkxODgsImV4cCI6MTcyNzA5NTU4OCwidHlwZSI6IkFDQ0VTUyJ9.Plxq0VQcPEoVVdFDrxZMYGLVqQa41_UPaJG5T6Clwo4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/self",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"self"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Blog Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjY5MDcyOTEsImV4cCI6MTcyNjk5MzY5MSwidHlwZSI6IkFDQ0VTUyJ9.uvZCt6-SgbVz0yVKyDvORNNMz5XH353vQB0wqyuMms8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/66ee9e729233571cceb2f2ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"66ee9e729233571cceb2f2ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment in Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NmVlN2JkMWY4YTg2MWJmMTNiM2QxMGYiLCJpYXQiOjE3MjY5MDcyOTEsImV4cCI6MTcyNjk5MzY5MSwidHlwZSI6IkFDQ0VTUyJ9.uvZCt6-SgbVz0yVKyDvORNNMz5XH353vQB0wqyuMms8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "blog_id",
+									"value": "66ee9e729233571cceb2f2ca",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "This is best Blog",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/blogs/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"blogs",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
