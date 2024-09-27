@@ -4,10 +4,10 @@ import logger from './logger';
 
 // Connect to MongoDB with enhanced security settings
 mongoose.connect(`${config.databases.mongodb.url}`, {
-  maxPoolSize: 10,
-  socketTimeoutMS: 45000,
-  family: 4,
-  serverSelectionTimeoutMS: 3000,
+  maxPoolSize: 10, // Limit the concurrent connection count
+  socketTimeoutMS: 45000, // wait until the query result is not coming
+  family: 4, // use only ipv4
+  serverSelectionTimeoutMS: 3000, // waits until server connection is not established
 });
 // Enable query logging
 mongoose.set('debug', true);
